@@ -1,10 +1,12 @@
-## uni.uploadFile(options) @uploadfile
+<!-- ## uni.uploadFile(options) @uploadfile -->
+
+<!-- UTSAPIJSON.uploadFile.name -->
 
 <!-- UTSAPIJSON.uploadFile.description -->
 
 <!-- UTSAPIJSON.uploadFile.compatibility -->
 
-推荐上传到uniCloud，uniCloud提供了更便宜CDN和更好的易用性，[详见](https://doc.dcloud.net.cn/uniCloud/storage.html)
+推荐上传到uniCloud，uniCloud提供了更便宜CDN和更好的易用性，[详见](https://doc.dcloud.net.cn/uniCloud/ext-storage/intro.html)
 
 <!-- UTSAPIJSON.uploadFile.param -->
 

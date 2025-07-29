@@ -278,9 +278,9 @@ uni-app x引擎仅在引擎崩溃时有数据收集以用于产品改进，且�
 ## 路线图
 
 2025年将推出：
-- vue蒸气模式，免除vnode，更高性能
-- 暴露完整的DOM API，可不使用vue开发
-- 提供vscode、cursor插件，支持更多ide开发uni-app x
+- 提供vscode、cursor插件，支持更多ide开发 uni-app x （内测中，[入群链接](https://im.dcloud.net.cn/#/?joinGroup=682c303383abe400024d38ba)）
+- vue蒸气模式（Vapor），免除vnode，更高性能
+- 暴露完整的DOM API，可不使用vue开发。社区可自行在上层封装react、声明式等其他dsl写法
 - 提供AI能力，帮助开发者自动修复强类型要求造成的类型错误
 
 其他计划，将根据社区的反馈意见来排优先级。
@@ -340,17 +340,20 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   iOS平台的js逻辑层模式，未来会推出wgt更新。
 
 - uni-app x 能调用所有原生API吗？\
-  可以。在app端，kotlin和swift能调用的，uts就能调。在浏览器端，所有js能调用的，uts也都能调。
+  可以。在app端，kotlin、swift、ets能调用的，uts就能调，因为uts其实就是编译成这些语言了。在浏览器、小程序端，所有js能调用的，uts也都能调。
 
 - uni-app x 能集成原生sdk吗？\
   可以，通过uts插件，[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-- uvue页面里的script可以直接调用原生代码吗？还是必须封装成uni_modules方式的uts原生插件？\
-  uvue的script里写的就是uts，Android端可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。\
-	iOS平台如果是js逻辑层模式，只能在独立`uni_modules`中才能调用原生。
-
 - uni-app x 的开发只能用HBuilderX吗？\
-  官方正在开发vscode、cursor插件。尽请期待。
+  官方已发布cursor/vscode兼容插件。[详见](tutorial/ls-plugin.md)
+
+- uni-app x 支持AI开发吗？\
+	uni-app x提供了cursor插件，见上一条FAQ。\
+	由于vscode等兼容插件无法自定义运行控制台，运行仍然在HBuilderX中。\
+	从HBuilderX 4.7+，在运行uni-app x的运行控制台，提供了ai修复，可以在hx中直接修复编译错误。[详见](tutorial/bug_repair.md)\
+	所以如果使用cursor等ai开发工具的话，需要同时打开HBuilderX来运行、调试。\
+	HBuilderX官方暂未内置AI生成代码，插件市场有三方插件。
 
 - uni-app x 支持最低的Android版本多少？浏览器版本多少？\
   * Android App最低支持`Android 5`；

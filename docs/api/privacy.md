@@ -3,7 +3,7 @@
 
 uni-app x并不需要这套机制，开发者的代码就是原生代码，执行时机很早，可以自己弹出隐私协议政策。（如在app launch生命周期中弹出dialogPage的协议框）
 
-但应用开发者和插件开发者，有时需要共享隐私协议是否同意的状态。所以提供了如下一批能力。
+但应用开发者和插件开发者，需要监听和共享隐私协议是否同意。所以提供了如下一批能力。
 
 - `uni.getPrivacySetting`：获取用户是否同意了隐私协议
 - `uni.resetPrivacyAuthorization`：重置隐私协议状态。适用于隐私协议变更，需要重新同意的场景
@@ -11,7 +11,9 @@ uni-app x并不需要这套机制，开发者的代码就是原生代码，执�
 - 在 [button组件](../component/button.md)中，提供了属性open-type="agreePrivacyAuthorization"。之所以同意隐私协议是按钮，而不是API，是因为需要用户真实的同意。避免插件作者通过API非正常设置隐私协议为同意。所以开发者务必在隐私协议的同意按钮处使用 open-type="agreePrivacyAuthorization" 的 button组件。
 - `manifest.json`中， `app` 节点下`initPrivacyAuthorization` 为 `auto` 时，安卓、鸿蒙平台隐私状态初始值为 `disagree`，iOS平台隐私状态初始值为 `agree`
 
-## uni.getPrivacySetting(options) @getprivacysetting
+<!-- ## uni.getPrivacySetting(options) @getprivacysetting -->
+
+<!-- UTSAPIJSON.getPrivacySetting.name -->
 
 <!-- UTSAPIJSON.getPrivacySetting.description -->
 
@@ -25,7 +27,9 @@ uni-app x并不需要这套机制，开发者的代码就是原生代码，执�
 
 <!-- UTSAPIJSON.getPrivacySetting.tutorial -->
 
-## uni.resetPrivacyAuthorization() @resetprivacyauthorization
+<!-- ## uni.resetPrivacyAuthorization() @resetprivacyauthorization -->
+
+<!-- UTSAPIJSON.resetPrivacyAuthorization.name -->
 
 <!-- UTSAPIJSON.resetPrivacyAuthorization.description -->
 
@@ -41,7 +45,9 @@ uni-app x并不需要这套机制，开发者的代码就是原生代码，执�
 
 <!-- UTSAPIJSON.resetPrivacyAuthorization.tutorial -->
 
-## uni.onPrivacyAuthorizationChange(callback) @onprivacyauthorizationchange
+<!-- ## uni.onPrivacyAuthorizationChange(callback) @onprivacyauthorizationchange -->
+
+<!-- UTSAPIJSON.onPrivacyAuthorizationChange.name -->
 
 <!-- UTSAPIJSON.onPrivacyAuthorizationChange.description -->
 
@@ -55,7 +61,9 @@ uni-app x并不需要这套机制，开发者的代码就是原生代码，执�
 
 <!-- UTSAPIJSON.onPrivacyAuthorizationChange.tutorial -->
 
-## uni.offPrivacyAuthorizationChange(id) @offprivacyauthorizationchange
+<!-- ## uni.offPrivacyAuthorizationChange(id) @offprivacyauthorizationchange -->
+
+<!-- UTSAPIJSON.offPrivacyAuthorizationChange.name -->
 
 <!-- UTSAPIJSON.offPrivacyAuthorizationChange.description -->
 

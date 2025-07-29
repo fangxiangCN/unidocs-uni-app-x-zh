@@ -1,4 +1,6 @@
-## native-view
+<!-- ## native-view -->
+
+<!-- UTSCOMJSON.native-view.name -->
 
 <!-- UTSCOMJSON.native-view.description -->
 
@@ -33,6 +35,10 @@
 **IOS 平台：**
 
 [UniNativeViewElement](../dom/uninativeviewelement.md) 提供[bindIOSView](../dom/uninativeviewelement.md#bindiosview)函数与`native-view`绑定ios平台原生view
+
+**Harmony 平台：**
+
+[UniNativeViewElement](../dom/uninativeviewelement.md) 提供 [bindHarmonyWrappedBuilder](../dom/uninativeviewelement.md#bindharmonywrappedbuilder) / [bindHarmonyFrameNode](../dom/uninativeviewelement.md#bindharmonyframenode) 函数与 `native-view` 绑定。
 
 #### 分发自定义事件
 
@@ -154,8 +160,49 @@ export class NativeButton {
 
 ```
 
+> Harmony
+
+```uts
+import { BuilderNode } from "@kit.ArkUI"
+// 导入混编实现的声明式UI构建函数
+// 完整代码可参考 https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/native-button/utssdk/app-harmony/builder.ets
+import { buildButton } from "./builder.ets"
+
+import { INativeButtonContext } from "../interface.uts"
+// 定义 buildButton 的参数类型
+interface NativeButtonOptions {
+    text : string
+    onClick : () => void
+}
+
+export class NativeButton {
+    private $element : UniNativeViewElement;
+    private builder : BuilderNode<[NativeButtonOptions]> | null = null
+    // 初始化 buildButton 默认参数
+    private params : NativeButtonOptions = {
+        text: '',
+        onClick: () => {
+            this.$element.dispatchEvent(new UniNativeViewEvent("customClick", {}))
+        }
+    }
+
+    constructor(element : UniNativeViewElement) {
+        // 绑定 wrapBuilder 函数
+        this.builder = element.bindHarmonyWrappedBuilder(wrapBuilder<[NativeButtonOptions]>(buildButton), this.params)
+    }
+
+    updateText(text : string) {
+        this.params.text = text
+        // 调用 builder update 函数来更新 UI
+        this.builder?.update(this.params)
+    }
+}
+
+```
+
 :::
 
 具体示例请参考：[native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/native-button/components/native-button/native-button.uvue)插件
+
 
 <!-- UTSCOMJSON.native-view.reference -->

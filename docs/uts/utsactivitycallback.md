@@ -9,7 +9,10 @@
 第三类:window窗体的相关方法[UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)\
 比如onCreatePanelMenu，onWindowDismissed等\
 第四类:activity本身自带的相关方法，不继承自其他类[UniActivityCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityCallback)\
-比如onProvideAssistData等\
+比如onProvideAssistData等
+
+> 因为uni-app x 暂不支持launchMode配置，所以 UniActivityCallback暂时不支持onNewIntent
+
 第五类：Component 组件相关方法[UniActivityComponentCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityComponentCallback)\
 比如onTrimMemory等
 
@@ -19,6 +22,7 @@
 
 ## UniActivityCallback
 
+> HBuilder X  4.62 之后版本 UniActivityParams 新增 activity 即当前activity实例对象
 
 ### 实例方法
 
@@ -1130,6 +1134,7 @@ uvue代码
   export default {
     data() {
       return {
+        cbText: "" as string,  
         text: '',
         callback: [] as Any[]
       }
@@ -1208,6 +1213,15 @@ uvue代码
 uts代码
 
 ```ts
+import Bundle from "android.os.Bundle"  
+import KeyEvent from "android.view.KeyEvent"  
+import WindowManager from "android.view.WindowManager"   
+import Menu from "android.view.Menu"  
+import ActionMode from "android.view.ActionMode"  
+import Configuration from "android.content.res.Configuration"  
+import KeyboardShortcutGroup from "android.view.KeyboardShortcutGroup";  
+
+
 let callback : (eventLog : string) => void = (res) => { };
 
 export function onCallbackChange(fn : (eventLog : string) => void) {

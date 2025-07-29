@@ -34,21 +34,29 @@
 				* [uni-map-tencent](native/modules/android/uni-map-tencent.md)
 			* [uts插件配置](native/use/androiduts.md)
 			* [启动与通信](native/use/androidcomm.md)
-			* [自定义基座](native/debug/android.md)
+			* [原生联调](native/debug/android.md)
 			* [SDK下载](native/download/android.md)
 		* iOS平台
 		   * [原生工程配置](native/use/ios.md)
 		   * [内置模块](native/modules/ios/modules.md)
 		   * [UTS插件](native/use/iosuts.md)
 		   * [启动与通信](native/use/iosapi.md)
-			* [自定义基座](native/debug/ios.md)
+			* [原生联调](native/debug/ios.md)
 			* [SDK下载](native/download/ios.md)
 	* 应用市场上架
 		* [概述](tutorial/app-market.md)
+		* [应用合规指南](tutorial/compliance.md)
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 	* [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
+  * uni-app x 原生SDK
+    * [概述](native/README.md)
+    * [原生工程配置](native/use/harmony.md)
+    * [内置模块](native/modules/harmony/modules.md)
+    * [UTS插件](native/use/harmonyuts.md)
+    * [启动与通信](native/use/harmonyapi.md)
+    * [原生联调](native/debug/harmony.md)
 * 小程序平台专题指南
   * [概述](mp/README.md)
 * 运行和调试
@@ -60,12 +68,17 @@
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 	* [鸿蒙运行](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html)
   * [鸿蒙Debug断点](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
+	* [AI纠错](tutorial/bug_repair.md)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [暗黑模式](api/theme-change.md)
+* [宽屏适配](adapt.md)
 * [国际化](i18n.md)
 * [源码和示例](sample.md)
 * [跨平台框架及原生对比](select.md)
+* cursor/vscode插件
+  * [语言服务插件](tutorial/ls-plugin.md)
+  * [AI Rules/MCP](tutorial/rules_mcp.md)
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)

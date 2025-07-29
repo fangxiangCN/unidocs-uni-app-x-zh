@@ -1,11 +1,9 @@
 ## 集成/制作DCloudUTSExtAPI
-> 参考demo中的DCloudUTSExtAPI工程
 
 ### 新建原生工程
 1. 启动`Xcode`，点击`File->New->Project`，选择`Framework`点击`Next`
-2. `Product Name`中填写`DCloudUTSExtAPI`，`Language`选择为`Objective-C`，点击`Next`即可完成创建
+2. `Product Name`中填写`DCloudUTSExtAPI`，点击`Next`即可完成创建
 
-> 你可以选择新建工程或直接使用demo中的`DCloudUTSExtAPI`工程
 
 ### 工程环境设置
 `Target -> General -> Minimum Deployments` 选择 `12.0`  
@@ -25,7 +23,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift <br> uni-prompt-UniAlert-DCActionSheetActionCell.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetController.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetHeader.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertContentView.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertControllerUtil.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertView.Blocks.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertViewController.swift(4.61+) <br> uni-prompt-UniAlert-DCBottomMenuController.swift(4.61+) <br> uni-prompt-UniAlert-DCloudAlertControllerComponents.swift(4.61+) <br> uni-prompt-UniAlert-DCloudTextView.swift(4.61+) <br> uni-prompt-UniAlert-DCRIButtonItem.swift(4.61+) <br> uni-prompt-UniAlert-UIView.Layout.swift(4.61+) <br> uni-prompt-UniToast-MCToast.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Loading.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Remove.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Status.swift(4.61+) <br> uni-prompt-UniToast-MCToast+StatusBar.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Text.swift(4.61+) <br> uni-prompt-UniToast-MCToastConfig.swift(4.61+) <br> uni-prompt-UniToast-MCToastHelper.swift(4.61+) <br>| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift <br> uni-modal-index(4.61+)  <br> uni-prompt-UniAlert-DCActionSheetActionCell.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetController.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetHeader.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertContentView.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertControllerUtil.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertView.Blocks.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertViewController.swift(4.61+) <br> uni-prompt-UniAlert-DCBottomMenuController.swift(4.61+) <br> uni-prompt-UniAlert-DCloudAlertControllerComponents.swift(4.61+) <br> uni-prompt-UniAlert-DCloudTextView.swift(4.61+) <br> uni-prompt-UniAlert-DCRIButtonItem.swift(4.61+) <br> uni-prompt-UniAlert-UIView.Layout.swift(4.61+) <br> uni-prompt-UniToast-MCToast.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Loading.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Remove.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Status.swift(4.61+) <br> uni-prompt-UniToast-MCToast+StatusBar.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Text.swift(4.61+) <br> uni-prompt-UniToast-MCToastConfig.swift(4.61+) <br> uni-prompt-UniToast-MCToastHelper.swift(4.61+) <br>| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -58,10 +56,16 @@
 | uni-chooseMedia | uni-chooseMedia-index.swift | | |
 | uni-requestMerchantTransfer(4.61+) | uni-requestMerchantTransfer-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security <br> |
 | uni-recorder(4.61+) | uni-recorder-index.swift <br> uni-recorder-UniAudioRecorderManager.swift| | |
-| uni-camera(4.61+) (依赖uni-media) | uni-camera-index.swift <br> uni-camera-Scanner.swift <br> uni-camera-CameraImpl.swift <br> uni-camera-CameraManager.swift |||
+| uni-camera(4.61+) (依赖uni-media) | uni-camera-index.swift <br>  uni-camera-CameraImpl.swift <br> uni-camera-CameraManager.swift |||
 | uni-fileSystemManager(4.61+) | uni-fileSystemManager-index.swift <br> uni-fileSystemManager-InnerFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManagerStats.swift| libZIPFoundation.a | AVFoundation<br> CoreImage|
 | uni-sse(4.63+) | uni-sse-index.swift <br> uni-sse-EventSource-Event.swift <br> uni-sse-EventSource-EventSource.swift <br> uni-sse-EventSource-EventStreamParser.swift| | |
 | uni-makePhoneCall(4.63+) | uni-makePhoneCall-index.swift | | |
+| uni-barcode-scanning(4.71+)(依赖uni-camera) | uni-barcode-scanning-index.swift <br> uni-barcode-scanning-Scanner.swift| pod 'GoogleMLKit/BarcodeScanning', '~> 6.0.0' | |
+| uni-scanCode(4.71+)(依赖uni-barcode-scanning) | uni-scanCode-index.swift| | |
+| uni-clipboard(4.71+) | uni-clipboard-index.swift | | |
+| uni-keyboard(4.71+) | uni-keyboard-index.swift | | |
+| uni-rich-text(4.71+) | uni-rich-text-index.swift | | |
+| uni-openDocument(4.71+)(依赖uni-fileSystemManager) | uni-openDocument-index.swift | | |
 
 ### 配置uts-config.json(可选)
 
@@ -167,6 +171,27 @@
 	}]
 }
 ```  
+
+`uni-barcode-scanning`模块需要添加如下配置
+  ```
+{
+   "hooksClasses": [
+		"UTSSDKModulesDCloudUniBarcodeScanningAppHookProxy"
+	]
+}
+```  
+
+`uni-rich-text`模块需要添加如下配置
+  ```
+{
+    "components": [{
+      "type": "customElement",
+		"name": "rich-text",
+		"class": "UTSSDKModulesDCloudUniRichTextUniRichTextElement",
+		"delegateClass": "UniRichTextElementRegister"
+	}]
+}
+```
   
 
 `uts-config.json`配置示例图     

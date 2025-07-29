@@ -10,7 +10,7 @@
 
 uni-app的普通页面代码是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
 
-uni-app x是编译为ArkTS，不管在普通页面还是在uts插件中均可调用鸿蒙原生API。
+uni-app x的页面和uts插件，都运行在ArkTS引擎下，不管在普通页面还是在uts插件中均可调用鸿蒙原生API。但普通页面目前会编译js文件，运行在arkts引擎下的js不能调用@kit的库，不能使用多线程能力。完善的ets能力，需要在uts插件中才能使用。
 
 只有uts插件才支持混编ets。
 
@@ -26,7 +26,7 @@ uts插件在编译到harmonyOS端时会被编译成ArkTS代码。因此编写代
 
 - [typescript官方文档](https://www.typescriptlang.org/zh/docs/)
 - [uts语法](https://doc.dcloud.net.cn/uni-app-x/uts/)
-- [ArkTs约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide-0000001820879565)
+- [ArkTs约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide-0000001820879565?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## harmonyOS 原生环境配置
 
@@ -104,11 +104,11 @@ uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖使用鸿
 
 ## 使用resources
 
-uts 插件内包含了一个resources目录，用于存放插件的资源文件，如图片、字体等，关于resources的更多信息请参考：[鸿蒙资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5)。此目录位于`utssdk/app-harmony/resources`。
+uts 插件内包含了一个resources目录，用于存放插件的资源文件，如图片、字体等，关于resources的更多信息请参考：[鸿蒙资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5?ha_source=Dcloud&ha_sourceId=89000448)。此目录位于`utssdk/app-harmony/resources`。
 
 ## module.json5
 
-开发者可以在uts插件内配置module.json5文件，用于配置插件的一些信息，如模块名、支持的设备类型、请求的权限等。module.json5内配置权限请参考鸿蒙官方文档：[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
+开发者可以在uts插件内配置module.json5文件，用于配置插件的一些信息，如模块名、支持的设备类型、请求的权限等。module.json5内配置权限请参考鸿蒙官方文档：[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 module.json5文件内容示例
 
@@ -153,6 +153,10 @@ utssdk/app-harmony/resources  -->  src/main/resources
 utssdk/app-harmony/*.ets  -->  utssdk/app-harmony/*.ets
 utssdk/app-harmony/*.har  -->  utssdk/app-harmony/*.har
 ```
+
+## 使用ets文件
+
+uts插件内的ets文件会原样拷贝到产物内，如果需要开发arkui声明式界面可以在ets文件内编写，uts文件内引用。用法可参考文档：[uts插件-实现NativeButton对象](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-component-vue.html#utscode)
 
 ## 常见问题
 

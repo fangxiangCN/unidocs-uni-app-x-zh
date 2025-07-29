@@ -3,7 +3,7 @@
 * [长度单位](common/length.md)
 * [颜色](common/color.md)
 * [At-rules](common/at-rules.md)
-* [CSS 函数](common/function.md)
+* [CSS 方法](common/function.md)
 * CSS 属性```{"collapsable": false}```
   * [align-content](align-content.md)
   * [align-items](align-items.md)
@@ -85,7 +85,7 @@
   * [text-decoration-style](text-decoration-style.md)
   * [text-decoration-thickness](text-decoration-thickness.md)
   * [text-overflow](text-overflow.md)
-  <!-- * [text-shadow](text-shadow.md) -->
+  * [text-shadow](text-shadow.md)
   * [top](top.md)
   * [transform](transform.md)
   * [transform-origin](transform-origin.md)

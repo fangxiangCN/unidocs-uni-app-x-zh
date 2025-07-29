@@ -1,8 +1,12 @@
-## uni.getRecorderManager() @getrecordermanager
+<!-- ## uni.getRecorderManager() @getrecordermanager -->
+
+<!-- UTSAPIJSON.getRecorderManager.name -->
 
 <!-- UTSAPIJSON.getRecorderManager.description -->
 
 <!-- UTSAPIJSON.getRecorderManager.compatibility -->
+
+web平台可通过插件拉齐，[详见](https://ext.dcloud.net.cn/search?q=getRecorderManager&orderBy=Relevance&cat1=4&cat2=41&uni-app-platforms=&uni-app-x-platforms=)
 
 <!-- UTSAPIJSON.getRecorderManager.param -->
 

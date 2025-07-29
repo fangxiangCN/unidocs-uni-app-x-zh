@@ -1,15 +1,28 @@
 # 云函数请求中的中间状态通知通道
 
-> 新增于HBuilderX 4.65
+> 新增于HBuilderX 4.71
 
 云函数在执行长时间任务时客户端无法获取云端任务执行状态，用户无法确定云函数是否还在正常执行，有些用户可能直接放弃等待刷新页面重新执行，从而导致浪费了更多的云函数资源。因此在此场景下需要一个云函数通知客户端发送执行状态或中间结果的通道。
 
-在常规web开发时可以使用server sent event将结果分段返回，客户端自行组装最终结果。但是小程序端并不支持server sent event，因此我们基于uni-push实现了这个替代方案。
+在常规web开发时通过云端向响应流多次写入数据的方式来实现，但是云函数不支持这种用法，因此我们基于uni-push实现了这个替代方案。
 
 使用此功能前需要先开通uni-push 2.0，参考文档：[uni-push 2.0](https://uniapp.dcloud.net.cn/unipush-v2.html)。uni-app-x项目使用SSEChannel需要自行配置uni-push模块到manifest.json内，且开发期间需要打包自定义基座进行测试。
 
+但是，在uni-app x中使用AI大模型流式返回数据时，持续保持云函数活跃会产生更多的费用。为此 uni-ai x，支持了云端返回临时token，由客户端直连LLM。除了节省费用，uni-ai x还提供了完整的客户端开源代码。[详见](https://ext.dcloud.net.cn/plugin?name=uni-ai-x)
+
 ## 客户端api
 
+### SSEChannel(options) @ssechannel
+
+<!-- UTSUNICLOUDAPIJSON.SSEChannel.description -->
+
+<!-- UTSUNICLOUDAPIJSON.SSEChannel.compatibility -->
+
+<!-- UTSUNICLOUDAPIJSON.SSEChannel.param -->
+
+<!-- UTSUNICLOUDAPIJSON.SSEChannel.returnValue -->
+
+<!-- UTSUNICLOUDAPIJSON.SSEChannel.tutorial -->
 
 
 ### 客户端代码示例

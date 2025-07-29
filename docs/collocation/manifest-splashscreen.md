@@ -1,5 +1,9 @@
 # splash启动界面@splash
 
+> HBuilderX4.71及以上版本调整manifest.json可视化配置界面。 此文档已废弃（不再维护），Android平台和iOS平台分别参考以下文档: 
+> - [安卓App配置 启动界面](manifest-android.md#@splashscreen)  
+> - [iOS App配置 启动界面](manifest-ios.md#splashscreen)  
+
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
 这个界面，即被称为启动封面，也成称为 splash。
@@ -25,7 +29,7 @@ uni-app x 的 app-android 平台，启动界面有以下策略：
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
 
-![](../static/splash_screen_android_1.png)#{width="800px"}
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_old.png)#{width="800px"}
 
 推荐使用`.9.png`来适配不同分辨率。
 
@@ -44,7 +48,7 @@ manifest虽然可以定义3种标准分辨率的启动图配置，而实际上�
 2. 使用.9.png图片后，整个图片应该是包裹着你想要显示的内容的，而没有使用的话整个图片将会被拉伸
 
 **制作.9.png图片**
-Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)  
+Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)
 
 详细制作步骤可参考链接：[Android中.9图片的含义及制作教程](https://www.jianshu.com/p/3fd048644e3f)
 
@@ -75,7 +79,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 在支持的Rom上表现形式如下图，启动后会看到下面的界面，然后直接进入应用主页。
 
-![](../static/splash_screen_android_example.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_example.png)
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Google SplashScreen配置”项下，可以配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
 
@@ -83,19 +87,19 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 可选配置，默认白色
 
-![](../static/splash_screen_android_picture2.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_bg.png)
 
 #### 配置启动界面中部logo图标：
 
 可选配置，默认应用启动图标
 
-![](../static/splash_screen_android_picture3.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo.png)
 
 #### 配置启动界面底部品牌图标：
 
 可选配置，默认底部不显示品牌图标
 
-![](../static/splash_screen_android_picture4.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_brand.png)
 
 **Tips**
 
@@ -225,4 +229,4 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动图设置”项下选择自己制作的storyboard文件：
 
-![](../static/splash_screen_ios_storyboard.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_ios_storyboard_old.png)
